@@ -81,6 +81,7 @@
 
 	</style>
 
+
 	<body class="smoothscroll enable-animation">
 
 		<!-- SLIDE TOP -->
@@ -324,11 +325,13 @@
 								</fieldset>
 									<!-- /Questions Building type -->
 
-									<input onclick="displayRadioValue()" type="radio" name="productLine" value="0">Standard <br>
-									<input onclick="displayRadioValue()" type="radio" name="productLine" value="1">Premium <br>
-									<input onclick="displayRadioValue()" type="radio" name="productLine" value="2">Excelium <br>									  
+									<input onclick="displayRadioValue()" type="radio" name="productLine" id="radio1" value="0">Standard <br>
+									<input onclick="displayRadioValue()" type="radio" name="productLine" id="radio2" value="1">Premium <br>
+									<input onclick="displayRadioValue()" type="radio" name="productLine" id="radio3" value="2">Excelium <br>									  
 									<br>				  
 									<br> 
+
+
 									  
 									<div id="result"></div> 
 									  
@@ -339,23 +342,23 @@
 									<div class="row" id="divResidential" >
 										<div class="col-md-6">
 											<label >Total number of units : </label>
-											<input onchange="costUpdateResidential()" min="0" max="999" type="number" value="0" id="residential_unit">
+											<input class="resetInput" onchange="costUpdateResidential()" min="0" max="999" type="number" value="0" id="residential_unit">
 											<label >How many floors : </label>
-											<input onchange="costUpdateResidential()" min="0" max="999" type="number" value="0" id="residential_floor">
+											<input class="resetInput" onchange="costUpdateResidential()" min="0" max="999" type="number" value="0" id="residential_floor">
 											<label >How many basement : </label>
-											<input onchange="costUpdateResidential()" min="0" max="999" type="number" value="0" id="residential_basement">
+											<input class="resetInput" onchange="costUpdateResidential()" min="0" max="999" type="number" value="0" id="residential_basement">
 											<br>
 											<br>Elevator price $ : 
 											<br>
-											<input onchange="costUpdateResidential()" id="residential_price_elevator" value="0" value="" type ="number" disabled>
+											<input class="resetInput" onchange="costUpdateResidential()" id="residential_price_elevator" value="0" value="" type ="number" disabled>
 											<br>
 											<br>Installation costs $: 
 											<br>
-											<input onchange="costUpdateResidential()" id="residential_installation_cost" value="0" type ="number"  disabled>
+											<input class="resetInput" onchange="costUpdateResidential()" id="residential_installation_cost" value="0" type ="number"  disabled>
 											<br>
 											<br>Total cost $: 
 											<br>
-											<input onchange="costUpdateResidential()" id="residential_total" value="0" type ="number"  disabled>
+											<input class="resetInput" onchange="costUpdateResidential()" id="residential_total" value="0" type ="number"  disabled>
 										</div>
 									</div>
 
@@ -370,26 +373,26 @@
 									<div class="row" id="divCommercial" >
 										<div class="col-md-6">
 											<label >The number of separate businesses : </label>
-											<input onchange="costUpdateCommercial()"  value="0"min="0" max="999" type="number" id="business_businesses">
+											<input class="resetInput" onchange="costUpdateCommercial()"  value="0"min="0" max="999" type="number" id="business_businesses">
 											<label >How many floors : </label>
-											<input onchange="costUpdateCommercial()"  value="0"min="0" max="999" type="number" id="business_floor">
+											<input class="resetInput" onchange="costUpdateCommercial()"  value="0"min="0" max="999" type="number" id="business_floor">
 											<label >How many basement : </label>
-											<input onchange="costUpdateCommercial()"  value="0"min="0" max="999" type="number" id="business_basement">
+											<input class="resetInput" onchange="costUpdateCommercial()"  value="0"min="0" max="999" type="number" id="business_basement">
 											<label >The number of parking spaces available : </label>
-											<input onchange="costUpdateCommercial()"  value="0"min="0" max="999" type="number" id="business_parking">
+											<input class="resetInput" onchange="costUpdateCommercial()"  value="0"min="0" max="999" type="number" id="business_parking">
 											<label >The number of elevator shafts to deploy : </label>
-											<input onchange="costUpdateCommercial()"  value="0"min="0" max="999" type="number" id="business_shaft">
+											<input class="resetInput" onchange="costUpdateCommercial()"  value="0"min="0" max="999" type="number" id="business_shaft">
 											<br>Elevator price $ : 
 											<br>
-											<input onchange="costUpdateCommercial()" id="commercial_price_elevator" value="0" value="" type ="number" disabled>
+											<input class="resetInput" onchange="costUpdateCommercial()" id="commercial_price_elevator" value="0" value="" type ="number" disabled>
 											<br>
 											<br>Installation costs $: 
 											<br>
-											<input onchange="costUpdateCommercial()" id="commercial_installation_cost" value="0" type ="number"  disabled>
+											<input class="resetInput" onchange="costUpdateCommercial()" id="commercial_installation_cost" value="0" type ="number"  disabled>
 											<br>
 											<br>Total cost $: 
 											<br>
-											<input onchange="costUpdateCommercial()" id="commercial_total" value="0" type ="number"  disabled>
+											<input class="resetInput" onchange="costUpdateCommercial()" id="commercial_total" value="0" type ="number"  disabled>
 
 										</div>
 									</div>
@@ -403,27 +406,27 @@
 									<div class="row" id="divCorporate" >
 										<div class="col-md-6">
 											<label >The number of separate tenant companies : </label>
-											<input onchange="costUpdateCorporate()" value="0" min="0" max="999" type="number" id="corporate_tenant">
+											<input class="resetInput" onchange="costUpdateCorporate()" value="0" min="0" max="999" type="number" id="corporate_tenant">
 											<label >How many floors : </label>
-											<input onchange="costUpdateCorporate()" value="0" min="0" max="999" type="number" id="corporate_floor">
+											<input class="resetInput" onchange="costUpdateCorporate()" value="0" min="0" max="999" type="number" id="corporate_floor">
 											<label >How many basement : </label>
-											<input onchange="costUpdateCorporate()" value="0" min="0" max="999" type="number" id="corporate_basement">
+											<input class="resetInput" onchange="costUpdateCorporate()" value="0" min="0" max="999" type="number" id="corporate_basement">
 											<label >The number of parking spaces available : </label>
-											<input onchange="costUpdateCorporate()" value="0" min="0" max="999" type="number" id="corporate_parking">
+											<input class="resetInput" onchange="costUpdateCorporate()" value="0" min="0" max="999" type="number" id="corporate_parking">
 											<label >The maximum number of occupants per floor : </label>
 											<input onchange="costUpdateCorporate()" value="0" min="0" max="999" type="number" id="corporate_occupants">
 											<br>
 											<br>Elevator price $ : 
 											<br>
-											<input onchange="costUpdateCorporate()" value="0" id="corporate_price_elevator" value="" type ="number" disabled>
+											<input class="resetInput" onchange="costUpdateCorporate()" value="0" id="corporate_price_elevator" value="" type ="number" disabled>
 											<br>
 											<br>Installation costs $: 
 											<br>
-											<input onchange="costUpdateCorporate()" value="0" id="corporate_installation_cost" type ="number"  disabled>
+											<input class="resetInput" onchange="costUpdateCorporate()" value="0" id="corporate_installation_cost" type ="number"  disabled>
 											<br>
 											<br>Total cost $: 
 											<br>
-											<input onchange="costUpdateCorporate()" value="0" id="corporate_total" type ="number"  disabled>
+											<input class="resetInput" onchange="costUpdateCorporate()" value="0" id="corporate_total" type ="number"  disabled>
 										</div>
 									</div>
 									</fieldset>
@@ -435,29 +438,29 @@
 									<div class="row" id="divHybrid">
 										<div class="col-md-6">
 											<label >The number of separate businesses : </label>
-											<input onchange="costUpdateHybrid()"min="0" max="999" type="number" id="hybrid_businesses" value="0">
+											<input class="resetInput" onchange="costUpdateHybrid()"min="0" max="999" type="number" id="hybrid_businesses" value="0">
 											<label >How many floors : </label>
-											<input onchange="costUpdateHybrid()"min="0" max="999" type="number" id="hybrid_floor" value="0">
+											<input class="resetInput" onchange="costUpdateHybrid()"min="0" max="999" type="number" id="hybrid_floor" value="0">
 											<label >How many basement : </label>
-											<input onchange="costUpdateHybrid()"min="0" max="999" type="number" id="hybrid_basement" value="0">
+											<input class="resetInput" onchange="costUpdateHybrid()"min="0" max="999" type="number" id="hybrid_basement" value="0">
 											<label >The number of parking spaces available : </label>
-											<input onchange="costUpdateHybrid()"min="0" max="999" type="number" id="hybrid_parking" value="0">
+											<input class="resetInput" onchange="costUpdateHybrid()"min="0" max="999" type="number" id="hybrid_parking" value="0">
 											<label >The maximum number of occupants per floor : </label>
-											<input onchange="costUpdateHybrid()"min="0" max="999" type="number" id="hybrid_occupants" value="0">
+											<input class="resetInput" onchange="costUpdateHybrid()"min="0" max="999" type="number" id="hybrid_occupants" value="0">
 											<label >Number of hours of activity of the building : </label>
-											<input onchange="costUpdateHybrid()"min="0" min="0" max="24" type="number" id="hybrid_hours" value="24">
+											<input class="resetInput" onchange="costUpdateHybrid()"min="0" min="0" max="24" type="number" id="hybrid_hours" value="24">
 											<br>
 											<br>Elevator price $ : 
 											<br>
-											<input onchange="costUpdateHybrid()" value="0" id="hybrid_price_elevator" value="" type ="number" disabled>
+											<input class="resetInput" onchange="costUpdateHybrid()" value="0" id="hybrid_price_elevator" value="" type ="number" disabled>
 											<br>
 											<br>Installation costs $: 
 											<br>
-											<input onchange="costUpdateHybrid()" value="0" id="hybrid_installation_cost" type ="number"  disabled>
+											<input class="resetInput" onchange="costUpdateHybrid()" value="0" id="hybrid_installation_cost" type ="number"  disabled>
 											<br>
 											<br>Total cost $: 
 											<br>
-											<input onchange="costUpdateHybrid()" value="0" id="hybrid_total" type ="number"  disabled>
+											<input class="resetInput" onchange="costUpdateHybrid()" value="0" id="hybrid_total" type ="number"  disabled>
 												
 										</div>
 									</div>
@@ -767,12 +770,17 @@
 		<!-- PAGELEVEL SCRIPTS -->
 		<script src="assets/js/contact.js"></script>
 
+		<script src="assets/js/jsmarc.js"></script>
 
 		</script>
 
 		<script> /* Show the value of the radio "productLine" */
 
 			var lineChoice = displayRadioValue();
+
+			let costEachElevator = [7565, 12345, 15400];
+			let costinstallation = [0.10, 0.13, 0.16];
+
 
 			function displayRadioValue() { 
 				
@@ -784,10 +792,6 @@
 					console.log("lineChoice = : " + lineChoice);
 				} 
 			} 
-
-			let costEachElevator = [7565, 12345, 15400];
-			let costinstallation = [0.10, 0.13, 0.16];
-
 
 			function openMenu() {
 
@@ -859,8 +863,7 @@
 					} else {
 					x.style.display = "none";
 			  }
-			}
-			
+			}		
 					
 			function costUpdateResidential(){
 

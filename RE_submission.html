@@ -785,6 +785,12 @@
 				} 
 			} 
 
+			let costEachElevator = [7565, 12345, 15400];
+			let costinstallation = [0.10, 0.13, 0.16];
+
+
+			function openMenu() {
+
 				/*
 				Var y : for getting the value of the ID "type_of_building"
 				Var n : for convertion of the y value to number value
@@ -792,7 +798,7 @@
 				Var x and x1 : declaring thoses variables outside of function to be global throughtout the main function
 				Var x1 to x4: for easier reference
 				*/
-			function openMenu() {
+
 
 				var y = document.getElementById("type_of_building").value;
 				console.log("y = : " + y);
@@ -856,20 +862,6 @@
 			}
 			
 					
-			let costEachElevator = [7565, 12345, 15400];
-			let costinstallation = [0.10, 0.13, 0.16];
-
-
-
-			var hybrid_businesses = +document.getElementById("hybrid_businesses").value;
-			var hybrid_floor = +document.getElementById("hybrid_floor").value;
-			var hybrid_basement = +document.getElementById("hybrid_basement").value;
-			var hybrid_parking = +document.getElementById("hybrid_parking").value;
-			var hybrid_occupants = +document.getElementById("hybrid_occupants").value;
-			var hybrid_hours = +document.getElementById("hybrid_hours").value;
-
-
-
 			function costUpdateResidential(){
 
 				/* 
@@ -934,25 +926,32 @@
 
 			}
 
-			function costUpdateCorporate(){
+			function costUpdateHybrid(){
 
-				let hybrid_tenant = +document.getElementById("hybrid_tenant").value;
+				let hybrid_businesses = +document.getElementById("hybrid_businesses").value;
 				let hybrid_floor = +document.getElementById("hybrid_floor").value;
 				let hybrid_basement = +document.getElementById("hybrid_basement").value;
 				let hybrid_parking = +document.getElementById("hybrid_parking").value;
 				let hybrid_occupants = +document.getElementById("hybrid_occupants").value;
+				let hybrid_hours = +document.getElementById("hybrid_hours").value;
 
-				let y1 = Math.ceil(corporate_floor + corporate_basement);
-				let y2 = Math.ceil(x1 * corporate_occupants / 1000);
-				let y3 = Math.ceil(x1 / 20);
-				let y4 = Math.ceil(x2 / x3);
-				let y5 = Math.ceil(x4 * x3);
 
-				document.getElementById("hybrid_price_elevator").value = parseInt(x5 * costEachElevator[lineChoice]).toFixed(2);
-				document.getElementById("hybrid_installation_cost").value = parseInt(x5 * costEachElevator[lineChoice] * costinstallation[lineChoice]).toFixed(2);
-				document.getElementById("hybrid_total").value = parseInt(x5 * costEachElevator[lineChoice] + x5 * costEachElevator[lineChoice] * costinstallation[lineChoice]).toFixed(2);
+				let y1 = Math.ceil(hybrid_floor + hybrid_basement);
+				let y2 = Math.ceil(y1 * hybrid_occupants / 1000);
+				let y3 = Math.ceil(y1 / 20);
+				let y4 = Math.ceil(y2 / y3);
+				let y5 = Math.ceil(y4 * y3);
 
-				console.log("Valeur de x5 : " + x5);
+				document.getElementById("hybrid_price_elevator").value = parseInt(y5 * costEachElevator[lineChoice]).toFixed(2);
+				document.getElementById("hybrid_installation_cost").value = parseInt(y5 * costEachElevator[lineChoice] * costinstallation[lineChoice]).toFixed(2);
+				document.getElementById("hybrid_total").value = parseInt(y5 * costEachElevator[lineChoice] + y5 * costEachElevator[lineChoice] * costinstallation[lineChoice]).toFixed(2);
+
+				console.log("Valeur de y1 : " + y1);
+				console.log("Valeur de y2 : " + y2);
+				console.log("Valeur de y3 : " + y3);
+				console.log("Valeur de y4 : " + y4);
+				console.log("Valeur de y5 : " + y5);
+				console.log("Valeur de y5 : " + y5);
 
 				}
 

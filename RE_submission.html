@@ -168,7 +168,7 @@
 
 						<!-- Logo -->
 						<a class="logo float-left" href="RE_home.html">
-							<img src="/RE/RocketElevatorAssets/R2.png" alt="" />
+							<img src="/assets/images/R2.png" alt="" />
 						</a>
 
 						<!-- 
@@ -295,6 +295,7 @@
 			</a>
 			<!-- /BUTTON CALLOUT -->
 <br><br><br>
+<button class="btn btn-primary" onclick="costUpdateCorporate()">Update cost</button>
 
 			<!-- SUBMISSION -->
 			<section id="submission">
@@ -314,11 +315,11 @@
 										<div class="col-md-6">
 											<h3><label >Type of building</label></h3>
 											<select onchange="openMenu()" id="type_of_building" class="form-control pointer" name="contact[department]">
-												<option value="0">--- Select ---</option>
-												<option value="1">Residential</option>
-												<option value="2">Commercial</option>
-												<option value="3">Corporate</option>
-												<option value="4">Hybrid</option>												
+												<option name="choice" id="optionSelect" value="0">--- Select ---</option>
+												<option name="choice" id="optionResidential" value="1">Residential</option>
+												<option name="choice" id="optionCommercial" value="2">Commercial</option>
+												<option name="choice" id="optionCorporate" value="3">Corporate</option>
+												<option name="choice" id="optionHybrid" value="4">Hybrid</option>												
 											</select>
 										</div>
 									</div>
@@ -466,6 +467,7 @@
 									</div>
 									</fieldset id="type_hybrid" >
 									<!--/Hybrid Type -->
+
 
 									<div class="row">
 										<div class="col-md-12">
@@ -790,6 +792,7 @@
 					if(productLineRadio[i].checked) 
 					lineChoice = productLineRadio[i].value;
 					console.log("lineChoice = : " + lineChoice);
+					
 				} 
 			} 
 
@@ -886,7 +889,7 @@
 					var residential_installation_cost = +document.getElementById("residential_installation_cost").value;
 					var residential_total = +document.getElementById("residential_total").value;
 
-					document.getElementById("residential_price_elevator").value = float(shaftForResidential * costEachElevator[lineChoice]).toFixed(2);
+					document.getElementById("residential_price_elevator").value = parseInt(shaftForResidential * costEachElevator[lineChoice]).toFixed(2);
 					document.getElementById("residential_installation_cost").value = parseInt(shaftForResidential * costEachElevator[lineChoice] * costinstallation[lineChoice]).toFixed(2);
 					document.getElementById("residential_total").value = parseInt(shaftForResidential * costEachElevator[lineChoice] + shaftForResidential * costEachElevator[lineChoice] * costinstallation[lineChoice]).toFixed(2);
 
